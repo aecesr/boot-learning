@@ -1,0 +1,6 @@
+GET http://localhost:8888/hello
+Accept: text/plain
+
+<> 2022-03-07T151619.200.txt
+
+###

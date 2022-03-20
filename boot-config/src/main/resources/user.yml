@@ -1,0 +1,10 @@
+user:
+  name: yR4hPq1qx//FoND+8fvY/kYWiQo3+KgxytNOnXHSGek3RQM/px0yQCbUW7riZnHS
+  age: 15
+  book:
+    name: 十萬個為什麼
+    price: 15
+
+jasypt:
+  encryptor:
+    name: 小曹同学
