@@ -36,6 +36,10 @@ public class Article implements Serializable {
 
     private String title;
 
+    private String cover;
+
+    private String summary;
+
     private String thumbnail;
 
     private String content;

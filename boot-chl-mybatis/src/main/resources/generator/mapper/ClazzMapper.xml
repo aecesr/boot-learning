@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.ClazzMapper">
+
+    <resultMap id="clazzMap" type="generator.domain.Clazz">
+            <id property="clazzId" column="clazz_id" jdbcType="INTEGER"/>
+            <result property="clazzName" column="clazz_name" jdbcType="VARCHAR"/>
+        <collection property="students" ofType="generator.domain.Student">
+            <id column="student_id" property="studentId"/>
+            <result column="student_name" property="studentName"/>
+            <result property="hometown" column="hometown"/>
+        </collection>
+    </resultMap>
+
+    <select id="findOneByMany" resultMap="clazzMap">
+        SELECT c.clazz_id, c.clazz_name, s.student_id, s.student_name, s.hometown
+        FROM t_clazz c,
+             t_student s
+        WHERE c.clazz_id = #{clazzId}
+        AND c.clazz_id = s.clazz_id
+    </select>
+</mapper>

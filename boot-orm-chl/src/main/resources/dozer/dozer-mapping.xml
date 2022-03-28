@@ -1,0 +1,16 @@
+<mappings xmlns="http://dozermapper.github.io/schema/bean-mapping"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozermapper.github.io/schema/bean-mapping https://dozermapper.github.io/schema/bean-mapping.xsd">
+    <configuration>
+        <date-format>yyyy-MM-dd HH:mm:ss</date-format>
+    </configuration>
+    <mapping>
+        <class-a>com.chl.boot.orm.entity.TestA</class-a>
+        <class-b>com.chl.boot.orm.entity.TestB</class-b>
+        <field>
+            <a>createDate</a>
+            <b>cDate</b>
+        </field>
+    </mapping>
+
+</mappings>

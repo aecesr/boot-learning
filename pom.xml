@@ -8,6 +8,7 @@
         <module>boot-config</module>
         <module>boot-orm-chl</module>
         <module>springboot-jpa-paging</module>
+        <module>boot-chl-mybatis</module>
     </modules>
 
     <parent>
