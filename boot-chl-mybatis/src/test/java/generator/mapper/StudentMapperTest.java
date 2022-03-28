@@ -1,5 +1,7 @@
 package generator.mapper;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import generator.domain.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -9,6 +11,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.annotation.Resource;
 
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -40,11 +43,11 @@ class StudentMapperTest {
     @Test
     void batchInsert() {
         List<Student> students = new ArrayList<>();
-        for (int i = 0; i <20; i++) {
+        for (int i = 0; i <2; i++) {
             Student student = new Student();
             student.setClazzId(1);
             student.setStudentName("zhangsan"+1);
-            student.setHometown("北京");
+            student.setHometown("江苏苏州");
             student.setBirthday(new Date());
             students.add(student);
         }
@@ -54,12 +57,28 @@ class StudentMapperTest {
     @Test
     void batchUpdate() {
         List<Student> students = new ArrayList<>();
-        for (int i = 1; i <4; i++) {
+        for (int i = 1; i <2; i++) {
             Student student = new Student();
             student.setStudentId(1001+i);
-            student.setStudentName("新名字"+i);
+            student.setStudentName("江苏南京"+i);
             students.add(student);
         }
         studentMapper.batchUpdate(students);
+    }
+
+    @Test
+    void findBy(){
+        Student student = new Student();
+        student.setHometown("苏苏");
+        List<Student> students = studentMapper.findStudentBy(student);
+        log.info(String.valueOf(students.size()));
+        students.forEach(stu -> log.info(String.valueOf(stu)));
+    }
+    @Test
+    void testPage(){
+        PageHelper.startPage(1,2);
+        List<Student> studentBy = studentMapper.findStudentBy(new Student());
+        PageInfo<Student> of = PageInfo.of(studentBy);
+        log.info(String.valueOf(of));
     }
 }

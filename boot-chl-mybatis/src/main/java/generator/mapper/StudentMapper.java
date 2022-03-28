@@ -23,4 +23,6 @@ public interface StudentMapper {
 
     Student findStuBy(@Param("student")Student student);
 
+    List<Student> findStudentBy(@Param("student")Student student);
+
 }
