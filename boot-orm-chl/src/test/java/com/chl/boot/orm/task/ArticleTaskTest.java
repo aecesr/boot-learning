@@ -1,6 +1,6 @@
 package com.chl.boot.orm.task;
 
-import com.chl.boot.orm.entity.dao.domain.Article;
+import com.chl.boot.orm.entity.Article;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;

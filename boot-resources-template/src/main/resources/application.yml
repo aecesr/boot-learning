@@ -1,0 +1,9 @@
+server:
+  port: 8888
+
+spring:
+  freemarker:
+    cache: false #缓存配置，开发的时候最好是false
+    suffix: .ftl  #模板文件后缀名
+    charset: UTF-8
+    template-loader-path: classpath:/templates/

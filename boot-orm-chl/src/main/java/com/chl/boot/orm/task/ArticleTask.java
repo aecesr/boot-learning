@@ -1,6 +1,6 @@
 package com.chl.boot.orm.task;
 
-import com.chl.boot.orm.entity.dao.domain.Article;
+import com.chl.boot.orm.entity.Article;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -76,9 +76,6 @@ public class ArticleTask implements Callable<List<Article>> {
             Article article = Article.builder()
                     .title(title)
                     .cover(cover)
-                    .category(category)
-                    .url(url)
-                    .userId(userid)
                     .summary(summary)
                     .build();
             articleList.add(article);

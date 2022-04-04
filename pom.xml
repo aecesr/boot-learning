@@ -9,6 +9,9 @@
         <module>boot-orm-chl</module>
         <module>springboot-jpa-paging</module>
         <module>boot-chl-mybatis</module>
+        <module>boot-resources-template</module>
+        <module>boot-multi-datasource</module>
+        <module>boot-filter-intercoptor</module>
     </modules>
 
     <parent>
