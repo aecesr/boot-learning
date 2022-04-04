@@ -7,3 +7,13 @@ spring:
     suffix: .ftl  #模板文件后缀名
     charset: UTF-8
     template-loader-path: classpath:/templates/
+
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    enabled: true
+    encoding: UTF-8
+    excluded-view-names:
+    mode: HTML5
+    prefix: classpath:/templates/
+    suffix: .html

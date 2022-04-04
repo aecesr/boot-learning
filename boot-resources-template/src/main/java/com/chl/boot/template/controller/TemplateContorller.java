@@ -20,15 +20,27 @@ import java.util.List;
 @RequestMapping("/template")
 public class TemplateContorller {
 
-    @GetMapping("/freemarkerIndex")
+    @GetMapping("/freemarker")
     public String freemakerIndex(Model model){
         List<Article> articles = Arrays.asList(
                 new Article(1,"张三","JAVA")
                 ,new Article(2,"张三锋","Spring")
                 ,new Article(3,"张三风","SpringBoot")
         );
-        model.addAttribute("arrticles",articles);
+        model.addAttribute("articles",articles);
         System.out.println(articles);
-        return  "freemarker-demo";
+        return  "freemaker-demo";
+    }
+
+    @GetMapping("/thymeleaf")
+    public String thymeleafIndex(Model model){
+        List<Article> articles = Arrays.asList(
+                new Article(1,"张三","JAVA")
+                ,new Article(2,"张三锋","Spring")
+                ,new Article(3,"张三风","SpringBoot")
+        );
+        model.addAttribute("articles",articles);
+        System.out.println(articles);
+        return  "thymeleaf-demo";
     }
 }

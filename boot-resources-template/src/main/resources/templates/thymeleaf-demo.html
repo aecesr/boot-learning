@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
+    <title>Document</title>
+    <style>
+        .odd {
+            background-color: #0a53be;
+        }
+    </style>
+</head>
+<body>
+<div class="container overflow-hidden">
+    <table class="table table-dark table-hover">
+        <tr>
+            <td>id</td>
+            <td>作者</td>
+            <td>标题</td>
+        </tr>
+        <tr th:each="item : ${articles}">
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.author}"></td>
+            <td th:text="${item.title}"></td>
+        </tr>
+    </table>
+    <br>
+    <div class="row">
+        <div class="col-4">
+            <label for="input1" class="form-label">id</label>
+            <input type="text" class="form-control" id="input1" th:value="${articles[0].id}">
+        </div>
+        <div class="col-4">
+            <label for="input2" class="form-label">id</label>
+            <input type="text" class="form-control" id="input2" th:value="${articles[0].author}">
+        </div>
+        <div class="col-4">
+            <label for="input3" class="form-label">id</label>
+            <input type="text" class="form-control" id="input3" th:value="${articles[0].title}">
+        </div>
+    </div>
+    <div class="row" th:object="${articles[1]}">
+        <div class="col-4">
+            <label for="input4" class="form-label">id</label>
+            <input type="text" class="form-control" id="input4" th:value="*{id}">
+        </div>
+        <div class="col-4">
+            <label for="input5" class="form-label">id</label>
+            <input type="text" class="form-control" id="input5" th:value="*{author}">
+        </div>
+        <div class="col-4">
+            <label for="input6" class="form-label">id</label>
+            <input type="text" class="form-control" id="input6" th:value="*{title}">
+        </div>
+    </div>
+
+    <br>
+    <div th:text="${'我是：'+(articles[2].author!=null ? articles[2].author:'没有内容')}"></div>
+
+    <br>
+    <table class="table table-hover">
+        <tr>
+            <td>下标</td>
+            <td>序号</td>
+            <td>id</td>
+            <td>作者</td>
+            <td>标题</td>
+        </tr>
+
+        <tr th:each="item,stat:${articles}" th:class="${stat.even}?'even':'odd'">
+            <td th:text="${stat.index}"></td>
+            <td th:text="${stat.count}"></td>
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.author}"></td>
+            <td th:text="${item.title}"></td>
+        </tr>
+    </table>
+    <br>
+    <div th:if="${articles}">
+        <h4>文章列表存在</h4>
+    </div>
+    <br>
+    <div th:unless="${users}">
+        <h4>用户列表暂无</h4>
+    </div>
+</div>
+</body>
+<script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+</html>
