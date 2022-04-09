@@ -1,0 +1,6 @@
+server:
+  port: 8888
+  ssl:
+    key-store: chl-ssl-key.p12
+    key-store-password: 123456
+    key-store-type: PKCS12 

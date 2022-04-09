@@ -12,6 +12,8 @@
         <module>boot-resources-template</module>
         <module>boot-multi-datasource</module>
         <module>boot-filter-intercoptor</module>
+        <module>spring-boot-test</module>
+        <module>boot-embed-server/boot-embed-server</module>
     </modules>
 
     <parent>
