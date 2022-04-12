@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+# mybatis
+#mybatis:
+#  mapper-locations: classpath:mapper/logback.xml  #注意：一定要对应mapper映射xml文件的所在路径
+#  type-aliases-package: com.chl.boot.log.entity  # 注意：对应实体类的路径
+#  configuration:
+#    #org.apache.ibatis.logging.stdout.StdOutImpl 控制台打印sql语句方便调试sql语句执行错误
+#    #org.apache.ibatis.logging.log4j2.Log4j2Impl:这个不在控制台打印查询结果,但是在log4j中打印
+#    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+#    mapUnderscoreToCamelCase: true # 开启驼峰命名转换法
+
+# 指定log4j2作为日志记录
+logging:
+  config: classpath:logback.xml
+#  level:
+    #这个指定你的dao层，也就是mapper文件的所在包
+#    com.xuan.dao: DEBUG
+
+
+#logging:
+#  level:
+#    root: info
+#    com.chl.boot.log.controller: debug
+#  file:
+#    name: D:\桌面\logs\boog-log.log
+#  logback:
+#    rollingpolicy:
+#      max-file-size: 5KB
+#      max-history:7
+#  pattern:
+#    console: '%red(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)'
+#    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger : %msg%n'
