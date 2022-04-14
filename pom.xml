@@ -16,6 +16,7 @@
 <!--        <module>boot-embed-server/boot-embed-server</module>-->
         <module>boot-excepiton</module>
         <module>boot-log-framework</module>
+        <module>boot-task</module>
     </modules>
 
     <parent>
