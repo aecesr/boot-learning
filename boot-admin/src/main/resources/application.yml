@@ -1,0 +1,31 @@
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+##        暴露  http://localhost:8080/actuator/customEndpoint访问
+#        include: health,info,beans,env,customEndpoint
+##        禁用
+#        exclude: info
+#
+#  endpoint:
+#    health:
+#      show-details: always
+server:
+  port: 8888
+
+
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+
+management:
+  endpoint:
+    health:
+      show-details: always
+
+  endpoints:
+    web:
+      exposure:
+        include: '*'
